@@ -27,14 +27,16 @@ DFM files.
 
 Installation
 ============
-The DfmCheck.bpl is a hibrid package. It can be used as a DLL Expert or as a
+The DfmCheck.bpl is a hybrid package. It can be used as a DLL Expert or as a
 design-time package. Using it as a design-time package could cause problems with the
 package unloading during compilation. But it is easier to install because you must
 only add the BPL to the package list. (Menu "Components/Install Packages")
 
 Installing the BPL as an DLL Expert can be done by using the Expert Manager from
 GExperts (http://www.gexperts.org) or by adding the BPL by hand to the registry key
-HKCU\{Borland|CodeGear|Embarcadero}\{Delphi|BDS|RAD Studio}\{version}\Experts .
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HKCU\{Borland|CodeGear|Embarcadero}\{Delphi|BDS|RAD Studio}\{version}\Experts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Supported Delphi Versions
