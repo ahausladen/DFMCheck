@@ -1,0 +1,38 @@
+Version 1.6 (2016-01-25)
+========================
+- Added "Yes To All" button for "Open/Close all forms"
+- Added taskbar progress for "Open/Close all forms" (Vista+)
+
+Version 1.5 (2011-05-05)
+========================
+- Fixed: Finding "Connected = True" in the DFM isn't an error anymore
+- Added: DFMCheck.exe command line tool for build scripts (see Readme.txt for a description)
+
+Version 1.41 (2011-03-14)
+=========================
+- Fixed out of memory bug 
+- Added support for RAD Studio XE.
+
+Version 1.4
+===========
+- Added: "Open and close all files" now asks the user to save the changes.
+
+Version 1.3
+===========
+- Added support for Delphi 2009 (requires IDE Fix Pack 2.1)
+
+Version 1.2
+============
+- Fixed "inline" bug
+
+Version 1.15
+============
+- Added "Show hint message for unnamed components" option
+
+Version 1.1
+===========
+- Added C++ Project support
+- Added Delphi/BCB 5 support
+- Fixed PopupMenu/ActionList "component to code"-bug
+- Added "Project/ Open/Close all forms" menu item that opens and immediatelly closes every form
+- If the DfmCheck_Unit is already added to the project, the check is performed on every compile

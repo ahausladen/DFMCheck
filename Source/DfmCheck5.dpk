@@ -1,0 +1,62 @@
+package DfmCheck5;
+
+{.$R *.RES}
+{$R '..\Version.res'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $33A00000}
+{$DESCRIPTION 'DFM Check'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50;
+
+contains
+  DfmCheck_Main in 'DfmCheck_Main.pas',
+  DfmCheck_Options in 'DfmCheck_Options.pas',
+  DfmCheck_AppConsts in 'DfmCheck_AppConsts.pas',
+  DfmCheck_DfmCheck in 'DfmCheck_DfmCheck.pas',
+  DfmCheck_Utils in 'DfmCheck_Utils.pas',
+  DfmCheck_ProgressFrm in 'DfmCheck_ProgressFrm.pas' {DfmCheck_FormProgress},
+  DfmCheck_OptionsFrm in 'DfmCheck_OptionsFrm.pas' {DfmCheck_FormOptions},
+  DfmCheck_PascalParser in 'DfmCheck_PascalParser.pas',
+  DfmCheck_TaskbarIntf in 'DfmCheck_TaskbarIntf.pas';
+
+{$I DfmCheck.inc}
+
+{$IFDEF COMPILER5}
+{$ENDIF}
+{$IFDEF COMPILER6}
+{$LIBSUFFIX '6'}
+{$ENDIF}
+{$IFDEF COMPILER7}
+{$LIBSUFFIX '7'}
+{$ENDIF}
+{$IFDEF COMPILER9}
+{$LIBSUFFIX '9'}
+{$ENDIF}
+{$IFDEF COMPILER10}
+{$LIBSUFFIX '10'}
+{$ENDIF}
+
+
+end.

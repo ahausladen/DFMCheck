@@ -3,7 +3,7 @@
 #
 # Resource files are binaries containing manifest, project icon and version info.
 # They can not be viewed as text or compared by diff-tools. Consider replacing them with .rc files.
-#*.res
+*.res
 #
 # Type library file (binary). In old Delphi versions it should be stored.
 # Since Delphi 2009 it is produced from .ridl file and can safely be ignored.
@@ -11,7 +11,7 @@
 #
 # Diagram Portfolio file. Used by the diagram editor up to Delphi 7.
 # Uncomment this if you are not using diagrams or use newer Delphi version.
-#*.ddp
+*.ddp
 #
 # Visual LiveBindings file. Added in Delphi XE2.
 # Uncomment this if you are not using LiveBindings Designer.
@@ -67,3 +67,8 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+
+
+bin
+lib
