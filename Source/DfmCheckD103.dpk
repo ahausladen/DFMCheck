@@ -1,4 +1,4 @@
-package DfmCheckD102;
+package DfmCheckD103;
 
 {$R *.res}
 {$R '..\Version.res'}
