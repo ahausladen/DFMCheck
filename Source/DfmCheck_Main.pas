@@ -1,11 +1,3 @@
-{******************************************************************************}
-{*                                                                            *}
-{* DfmCheck                                                                   *}
-{*                                                                            *}
-{* (C) 2006-2007 Andreas Hausladen                                            *}
-{*                                                                            *}
-{******************************************************************************}
-
 unit DfmCheck_Main;
 
 {$I DfmCheck.inc}
@@ -435,10 +427,7 @@ initialization
   begin
     AboutBoxIndex := AboutBoxServices.AddPluginInfo(
       'DFM Check ' + sVersion,
-      'DFM Check ' + sVersion + sLineBreak +
-      sLineBreak +
-      'Copyright (C) 2006-2011 Andreas Hausladen' + sLineBreak +
-      'Use at your own risk.',
+      'DFM Check ' + sVersion + sLineBreak,
       0
     );
   end;

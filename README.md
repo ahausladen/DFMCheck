@@ -18,7 +18,7 @@ smart linking feature.
 
 
 DFMCheck.exe (Delphi Projects only)
-==========================
+===================================
 The DFMCheck.exe is a command line tool that generates a <Project>_DfmCheck_Unit.pas
 and copies the project file to <Project>_DfmCheck.[dpr/cfg/dproj]. This allows a build
 script to invoke the compiler on the DfmCheck project to verify the correctness of the

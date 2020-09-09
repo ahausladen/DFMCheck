@@ -114,11 +114,11 @@
 						<VersionInfo Name="CodePage">1252</VersionInfo>
 					</VersionInfo>
 					<VersionInfoKeys>
-						<VersionInfoKeys Name="CompanyName">Andreas Hausladen</VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
 						<VersionInfoKeys Name="FileVersion">1.4.0.0</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName"/>
-						<VersionInfoKeys Name="LegalCopyright">(C) 2006-2018 Andreas Hausladen</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>
 						<VersionInfoKeys Name="OriginalFilename">DfmCheck2010.bpl</VersionInfoKeys>
 						<VersionInfoKeys Name="ProductName">DFM Check</VersionInfoKeys>

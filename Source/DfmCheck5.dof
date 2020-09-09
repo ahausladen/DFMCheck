@@ -70,11 +70,11 @@ DLL=1
 Locale=1031
 CodePage=1252
 [Version Info Keys]
-CompanyName=Andreas Hausladen
+CompanyName=
 FileDescription=
 FileVersion=1.2.0.0
 InternalName=
-LegalCopyright=(C) 2006-2007 Andreas Hausladen
+LegalCopyright=
 LegalTrademarks=
 OriginalFilename=DfmCheck.bpl
 ProductName=DFM Check

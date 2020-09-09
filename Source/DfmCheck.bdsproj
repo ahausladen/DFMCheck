@@ -172,12 +172,6 @@
 			<VersionInfoKeys Name="Comments"></VersionInfoKeys>
 		</VersionInfoKeys>  
     <Excluded_Packages>
-      <Excluded_Packages Name="C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\Borland Studio-Projekte\Bpl\VirtualTreesD10D.bpl">Virtual Treeview design time package</Excluded_Packages>
-      <Excluded_Packages Name="C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\Borland Studio-Projekte\Bpl\ActnManXPStyleEx100.bpl">Extending ActionManager XP Style by Jeremy North</Excluded_Packages>
-      <Excluded_Packages Name="c:\borland\bds\4.0\Bin\dclbcbsmp100.bpl">Borland Sample Controls Design Time Package</Excluded_Packages>
-      <Excluded_Packages Name="c:\borland\bds\4.0\bin\dclado100.bpl">Borland ADO DB-Komponenten</Excluded_Packages>
-      <Excluded_Packages Name="c:\borland\bds\4.0\Bin\dclact100.bpl">Borland ActionBar-Komponenten</Excluded_Packages>
-      <Excluded_Packages Name="c:\borland\bds\4.0\Bin\dcl31w100.bpl">Delphi 1.0 Kompatibilitätskomponenten</Excluded_Packages>
     </Excluded_Packages>
   </Delphi.Personality>
 </BorlandProject>

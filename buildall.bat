@@ -7,7 +7,6 @@ SET BORLAND=C:\Borland
 SET CODEGEAR=C:\CodeGear
 SET EMBT=C:\Program Files (x86)\Embarcadero
 SET OLDPATH=%PATH%
-SET SYSDIR=%windir%\SysWOW64
 SET ISCC="C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
 SET ZIP="C:\Program Files\7-Zip\7z.exe"
 
@@ -201,7 +200,7 @@ cd ..
 
 echo === Installer =============================
 :Setup
-if not exist "Instaler" goto Leave
+if not exist "Installer" goto Leave
 cd Installer
 %ISCC% DfmCheck.iss
 if ERRORLEVEL 1 goto Error1
