@@ -2,6 +2,10 @@ unit DfmCheck_PascalParser;
 
 interface
 
+{$IFDEF UNICODE}
+  {$WARN WIDECHAR_REDUCED OFF}
+{$ENDIF UNICODE}
+
 uses
   SysUtils, Classes;
 

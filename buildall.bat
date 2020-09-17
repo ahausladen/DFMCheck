@@ -10,7 +10,7 @@ SET OLDPATH=%PATH%
 SET ISCC="C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
 SET ZIP="C:\Program Files\7-Zip\7z.exe"
 
-"%EMBT%\RAD Studio\8.0\Bin\brcc32.exe" Version.rc -foVersion.res
+if exist "%EMBT%\RAD Studio\8.0\Bin\brcc32.exe"   "%EMBT%\RAD Studio\8.0\Bin\brcc32.exe" Version.rc -foVersion.res
 
 if not exist "%DIR%\bin" md "%DIR%\bin"
 if not exist "%DIR%\lib" md "%DIR%\lib"

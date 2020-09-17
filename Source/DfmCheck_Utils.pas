@@ -1,6 +1,9 @@
 unit DfmCheck_Utils;
 
 {$I DfmCheck.inc}
+{$IFDEF UNICODE}
+  {$WARN WIDECHAR_REDUCED OFF}
+{$ENDIF UNICODE}
 
 interface
 
