@@ -16,6 +16,15 @@ if not exist "%DIR%\bin" md "%DIR%\bin"
 if not exist "%DIR%\lib" md "%DIR%\lib"
 
 ::goto Setup
+echo === Delphi 10.4 Sydney =======================
+
+SET PATH=%EMBT%\Studio\21.0\Bin;%OLDPATH%
+call rsvars.bat
+cd source
+msbuild /t:Clean DfmCheckD104.dproj
+msbuild /p:Configuration=Release DfmCheckD104.dproj
+
+
 echo === Delphi 10.3 Rio =======================
 
 SET PATH=%EMBT%\Studio\20.0\Bin;%OLDPATH%
