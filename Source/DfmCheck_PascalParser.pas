@@ -57,8 +57,8 @@ type
     constructor Create(const AFileName, AText: string; StartLineNum: Integer = 1);
     destructor Destroy; override;
 
-    function GetToken: PTokenInfo; overload;
-    function GetToken(out p: PTokenInfo): Boolean; overload;
+    function GetToken(const ALookAhead: Boolean = False): PTokenInfo; overload;
+    function GetToken(out p: PTokenInfo; const ALookAhead: Boolean = False): Boolean; overload;
 
     procedure Delete(StartIndex, Count: Integer);
     procedure Insert(Index: Integer; const S: string);
@@ -86,17 +86,24 @@ implementation
 
 { TPascalParser }
 
-function TPascalParser.GetToken: PTokenInfo;
+function TPascalParser.GetToken(const ALookAhead: Boolean = False): PTokenInfo;
 var
   PText, F, P: PChar;
   IndexAdd: Integer;
   IsDecimal: Boolean;
   IsExp: Boolean;
   IsExpSign: Boolean;
+
+  Idx: Integer;
+  LineNum: Integer;
+  TokenIdx: Integer;
 begin
   Result := nil;
   if FIndex > FTextLen then
     Exit;
+
+  LineNum := FLineNum;
+  TokenIdx := FTokenIndex;
 
   PText := Pointer(FText);
   P := PText + FIndex - 1;
@@ -104,19 +111,19 @@ begin
   while P[0] in WhiteChars do
   begin
     if P[0] = #10 then
-      Inc(FLineNum);
+      Inc(LineNum);
     Inc(P);
   end;
 
   if P[0] = #0 then
     Exit;
 
-  Inc(FTokenIndex);
-  if FTokenIndex >= MaxCachedTokens then
-    FTokenIndex := 0; // ring buffer
+  Inc(TokenIdx);
+  if TokenIdx >= MaxCachedTokens then
+    TokenIdx := 0; // ring buffer
 
-  Result := FTokens[FTokenIndex];
-  Result.StartLine := FLineNum;
+  Result := FTokens[TokenIdx];
+  Result.StartLine := LineNum;
   Result.StartIndex := P - PText + 1;
   Result.ExKind := tekNone;
 
@@ -168,7 +175,7 @@ begin
         #0, '}':
           Break;
         #10:
-          Inc(FLineNum);
+          Inc(LineNum);
       end;
       Inc(P);
     end;
@@ -191,7 +198,7 @@ begin
     while (P[0] <> #0) and not ((P[0] = '*') and (P[1] = ')')) do
     begin
       if P[0] = #10 then
-        Inc(FLineNum);
+        Inc(LineNum);
       Inc(P);
     end;
     Result.Kind := tkComment;
@@ -209,7 +216,7 @@ begin
     begin
       if P[0] = #13 then
         IndexAdd := 1; {do not parse the #13 again}
-      Inc(FLineNum);
+      Inc(LineNum);
       Inc(IndexAdd); {do not parse the #10 again}
     end;
   end
@@ -308,13 +315,21 @@ begin
       Inc(P);
     Result.Kind := tkSymbol;
   end;
-  FIndex := P - PText + 1;
 
-  Result.EndLine := FLineNum;
-  Result.EndIndex := FIndex - 1;
+  Idx := P - PText + 1;
+
+  Result.EndLine := LineNum;
+  Result.EndIndex := Idx - 1;
   SetString(Result.Value, F, P - F);
 
-  Inc(FIndex, IndexAdd); // skip some chars if necessary
+  if (not ALookAhead) then
+  begin
+    FIndex := Idx;
+    FLineNum := LineNum;
+    FTokenIndex := TokenIdx;
+
+    Inc(FIndex, IndexAdd); // skip some chars if necessary
+  end;
 end;
 
 constructor TPascalParser.Create(const AFilename, AText: string;
@@ -394,9 +409,9 @@ begin
   FTokenIndex := -1;
 end;
 
-function TPascalParser.GetToken(out p: PTokenInfo): Boolean;
+function TPascalParser.GetToken(out p: PTokenInfo; const ALookAhead: Boolean = False): Boolean;
 begin
-  p := GetToken;
+  p := GetToken(ALookAhead);
   Result := p <> nil;
 end;
 
