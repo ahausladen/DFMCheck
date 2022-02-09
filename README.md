@@ -47,4 +47,4 @@ Supported Delphi Versions
 - Delphi 2005 (9)
 - BDS 2006 (10)
 - Delphi 2007, C++Builder 2007, RAD Studio 2007
-- Delphi/C++Builder/RAD Studio 2009-10.3
+- Delphi/C++Builder/RAD Studio 2009-11
