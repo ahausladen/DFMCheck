@@ -46,8 +46,8 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <SanitizedProjectName>DfmCheckD12</SanitizedProjectName>
         <DCC_BplOutput>..\bin</DCC_BplOutput>
-        <DCC_DcpOutput>..\lib\D103</DCC_DcpOutput>
-        <DCC_DcuOutput>..\lib\D103</DCC_DcuOutput>
+        <DCC_DcpOutput>..\lib\D12</DCC_DcpOutput>
+        <DCC_DcuOutput>..\lib\D12</DCC_DcuOutput>
         <DCC_Define>IDE;$(DCC_Define)</DCC_Define>
         <DCC_DependencyCheckOutputName>..\bin\DfmCheckD12.bpl</DCC_DependencyCheckOutputName>
         <DCC_Description>DFM Check</DCC_Description>
